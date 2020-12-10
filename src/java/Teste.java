@@ -21,7 +21,7 @@ import java.util.Date;
 public class Teste {
     public static void main (String [] args) throws ParseException{
         Cliente c = new Cliente();
-        c.setNome("Callil");
+        c.setNome("Calli");
         DateFormat f = DateFormat.getDateInstance();
         Date data2 = f.parse("24/06/2003");
         c.setDataNascimento(data2);
