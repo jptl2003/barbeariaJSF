@@ -21,12 +21,17 @@ import java.util.Date;
 public class Teste {
     public static void main (String [] args) throws ParseException{
         Cliente c = new Cliente();
-        c.setNome("Calli");
+        c.setNome("CCCC");
         DateFormat f = DateFormat.getDateInstance();
         Date data2 = f.parse("24/06/2003");
         c.setDataNascimento(data2);
-        c.setNumero("87 8888 8888");
-        c.setEndereco("Rua bbb");
+        c.setTelefone("87 8888 8888");
+        c.setBairro("aaa");
+        c.setCidade("bbb");
+        c.setComplemento("apartamento bla bla");
+        c.setNumero("32");
+        c.setUf("PE");
+        c.setStatus("Solteiro");
         // new ClienteDAO().salvar(c);
         String sql = "Select * from Cliente where nome like ?";
         String [] param = {"%i%"};

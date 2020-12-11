@@ -13,7 +13,7 @@ public class Produto implements Serializable {
     private int id;
     private String nome;
     private String tipo;
-    private double preco;
+    private String preco;
     private int quantidade;
 
     public int getId() {
@@ -40,11 +40,11 @@ public class Produto implements Serializable {
         this.tipo = tipo;
     }
 
-    public double getPreco() {
+    public String getPreco() {
         return preco;
     }
 
-    public void setPreco(double preco) {
+    public void setPreco(String preco) {
         this.preco = preco;
     }
 
@@ -59,11 +59,11 @@ public class Produto implements Serializable {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 29 * hash + this.id;
-        hash = 29 * hash + Objects.hashCode(this.nome);
-        hash = 29 * hash + Objects.hashCode(this.tipo);
-        hash = 29 * hash + (int) (Double.doubleToLongBits(this.preco) ^ (Double.doubleToLongBits(this.preco) >>> 32));
-        hash = 29 * hash + this.quantidade;
+        hash = 43 * hash + this.id;
+        hash = 43 * hash + Objects.hashCode(this.nome);
+        hash = 43 * hash + Objects.hashCode(this.tipo);
+        hash = 43 * hash + Objects.hashCode(this.preco);
+        hash = 43 * hash + this.quantidade;
         return hash;
     }
 
@@ -82,9 +82,6 @@ public class Produto implements Serializable {
         if (this.id != other.id) {
             return false;
         }
-        if (Double.doubleToLongBits(this.preco) != Double.doubleToLongBits(other.preco)) {
-            return false;
-        }
         if (this.quantidade != other.quantidade) {
             return false;
         }
@@ -94,9 +91,13 @@ public class Produto implements Serializable {
         if (!Objects.equals(this.tipo, other.tipo)) {
             return false;
         }
+        if (!Objects.equals(this.preco, other.preco)) {
+            return false;
+        }
         return true;
     }
 
+    
     @Override
     public String toString() {
         return nome;
